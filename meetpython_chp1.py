@@ -65,7 +65,16 @@ for eachMovie in movies:
             print(isItem)
     else:
         print(eachMovie)
+print()
 
 # Better but the 3rd list for supporting actors not being processed.
+# So now we create our own named suite of code - a recursive function
+def print_nesters(the_list):
+    for list_item in the_list:
+        if isinstance(list_item, list):
+            print_nesters(list_item)
+        else:
+            print(list_item)
 
 
+print_nesters(movies)
