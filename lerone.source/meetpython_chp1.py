@@ -3,6 +3,8 @@
 print("hello" )
 if 43 > 42:
     print("Don't panic!")
+    print()
+
 
 #List of movies, or array of movies
 movies = ["The Holy Grail",
@@ -60,6 +62,7 @@ for eachMovie in movies:
 # For each item check if it is a list and process it before moving onto the next list item
 print()
 for eachMovie in movies:
+    # list processing code is called a suite
     if isinstance(eachMovie, list):
         for isItem in eachMovie:
             print(isItem)
