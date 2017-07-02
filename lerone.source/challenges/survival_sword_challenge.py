@@ -11,7 +11,7 @@ for people_id in range(1, 101, 1):
     people.append(people_id)
 
 index = 0
-rounds = 1
+rounds = 0
 
 while len(people) != 1:
     index = 0
