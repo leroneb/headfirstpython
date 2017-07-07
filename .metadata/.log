@@ -1,0 +1,266 @@
+!SESSION 2017-07-05 23:02:30.798 -----------------------------------------------
+eclipse.buildId=4.7.0.I20160915-0230
+java.version=1.8.0_73
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product org.eclipse.platform
+Command-line arguments:  -data /home/ubuntu/git/headfirstpython -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product org.eclipse.platform
+
+!ENTRY org.eclipse.osgi 2 0 2017-07-05 23:03:11.781
+!MESSAGE While loading class "org.eclipse.egit.ui.internal.ConfigurationChecker$1$1", thread "Thread[Worker-0,5,main]" timed out waiting (5092ms) for thread "Thread[main,6,main]" to finish starting bundle "org.eclipse.egit.ui_4.4.1.201607150455-r [276]". To avoid deadlock, thread "Thread[Worker-0,5,main]" is proceeding but "org.eclipse.egit.ui.internal.ConfigurationChecker$1$1" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; osgi.identity="org.eclipse.egit.ui"; singleton:="true" [id=276] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.egit.ui.internal.ConfigurationChecker$1.run(ConfigurationChecker.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 13 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.egit.ui.internal.ConfigurationChecker$1.run(ConfigurationChecker.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.rse.core 4 0 2017-07-05 23:03:51.841
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: ubuntu-VirtualBox: ubuntu-VirtualBox: unknown error
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1505)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:298)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:301)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:131)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:370)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:222)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:276)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:623)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:147)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:134)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:488)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.internal.ui.RSEUIStartup.earlyStartup(RSEUIStartup.java:20)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:77)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:53)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2830)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: ubuntu-VirtualBox: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1500)
+	... 28 more
+
+!ENTRY org.eclipse.rse.core 4 0 2017-07-05 23:03:52.522
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: ubuntu-VirtualBox: ubuntu-VirtualBox: unknown error
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1505)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.ensureDefaultPrivateProfile(SystemProfileManager.java:477)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.getDefaultPrivateSystemProfile(SystemProfileManager.java:416)
+	at org.eclipse.rse.internal.core.RSEInitJob.run(RSEInitJob.java:207)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: ubuntu-VirtualBox: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1500)
+	... 6 more
+
+!ENTRY org.eclipse.rse.core 4 0 2017-07-05 23:03:52.636
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: ubuntu-VirtualBox: ubuntu-VirtualBox: unknown error
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1505)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.createDefaultPrivateProfile(SystemProfileManager.java:450)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.ensureDefaultPrivateProfile(SystemProfileManager.java:501)
+	at org.eclipse.rse.internal.core.model.SystemProfileManager.getDefaultPrivateSystemProfile(SystemProfileManager.java:416)
+	at org.eclipse.rse.internal.core.RSEInitJob.run(RSEInitJob.java:207)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: ubuntu-VirtualBox: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1500)
+	... 7 more
+!SESSION 2017-07-05 23:09:19.148 -----------------------------------------------
+eclipse.buildId=4.7.0.I20160915-0230
+java.version=1.8.0_73
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86, WS=gtk, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.jee.product org.eclipse.platform
+Command-line arguments:  -os linux -ws gtk -arch x86 -product org.eclipse.epp.package.jee.product org.eclipse.platform
+
+!ENTRY org.eclipse.osgi 2 0 2017-07-05 23:10:12.662
+!MESSAGE While loading class "org.eclipse.egit.ui.internal.ConfigurationChecker$1$1", thread "Thread[Worker-0,5,main]" timed out waiting (5068ms) for thread "Thread[main,6,main]" to finish starting bundle "org.eclipse.egit.ui_4.4.1.201607150455-r [276]". To avoid deadlock, thread "Thread[Worker-0,5,main]" is proceeding but "org.eclipse.egit.ui.internal.ConfigurationChecker$1$1" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: Unable to acquire the state change lock for the module: osgi.identity; type="osgi.bundle"; version:Version="4.4.1.201607150455-r"; osgi.identity="org.eclipse.egit.ui"; singleton:="true" [id=276] STARTED [STARTED]
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:337)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.egit.ui.internal.ConfigurationChecker$1.run(ConfigurationChecker.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	... 13 more
+Root exception:
+java.util.concurrent.TimeoutException: Timeout after waiting 5 seconds to acquire the lock.
+	at org.eclipse.osgi.container.Module.lockStateChange(Module.java:334)
+	at org.eclipse.osgi.container.Module.start(Module.java:401)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:468)
+	at org.eclipse.osgi.internal.hooks.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:103)
+	at org.eclipse.osgi.internal.loader.classpath.ClasspathManager.findLocalClass(ClasspathManager.java:529)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.findLocalClass(ModuleClassLoader.java:325)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findLocalClass(BundleLoader.java:345)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClassInternal(BundleLoader.java:423)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:372)
+	at org.eclipse.osgi.internal.loader.BundleLoader.findClass(BundleLoader.java:364)
+	at org.eclipse.osgi.internal.loader.ModuleClassLoader.loadClass(ModuleClassLoader.java:161)
+	at java.lang.ClassLoader.loadClass(ClassLoader.java:357)
+	at org.eclipse.egit.ui.internal.ConfigurationChecker$1.run(ConfigurationChecker.java:45)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.rse.core 4 0 2017-07-05 23:11:18.441
+!MESSAGE Unexpected Exception
+!STACK 0
+java.net.UnknownHostException: ubuntu-VirtualBox: ubuntu-VirtualBox: unknown error
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1505)
+	at org.eclipse.rse.core.RSECorePlugin.getLocalMachineName(RSECorePlugin.java:265)
+	at org.eclipse.rse.core.RSEPreferencesManager.getDefaultPrivateSystemProfileName(RSEPreferencesManager.java:358)
+	at org.eclipse.rse.core.RSEPreferencesManager.initDefaults(RSEPreferencesManager.java:337)
+	at org.eclipse.rse.internal.core.RSEPreferenceInitializer.initializeDefaultPreferences(RSEPreferenceInitializer.java:23)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper$1.run(PreferenceServiceRegistryHelper.java:298)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.runInitializer(PreferenceServiceRegistryHelper.java:301)
+	at org.eclipse.core.internal.preferences.PreferenceServiceRegistryHelper.applyRuntimeDefaults(PreferenceServiceRegistryHelper.java:131)
+	at org.eclipse.core.internal.preferences.PreferencesService.applyRuntimeDefaults(PreferencesService.java:370)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.applyRuntimeDefaults(DefaultPreferences.java:222)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.load(DefaultPreferences.java:276)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.create(EclipsePreferences.java:370)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalNode(EclipsePreferences.java:623)
+	at org.eclipse.core.internal.preferences.DefaultPreferences.node(DefaultPreferences.java:147)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getDefaultPreferences(PreferenceForwarder.java:134)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.getInt(PreferenceForwarder.java:488)
+	at org.eclipse.rse.logging.Logger.initialize(Logger.java:249)
+	at org.eclipse.rse.logging.Logger.<init>(Logger.java:135)
+	at org.eclipse.rse.logging.LoggerFactory.getLogger(LoggerFactory.java:45)
+	at org.eclipse.rse.core.RSECorePlugin.getLogger(RSECorePlugin.java:392)
+	at org.eclipse.rse.internal.core.RSEInitJob.<init>(RSEInitJob.java:133)
+	at org.eclipse.rse.internal.core.RSEInitJob.<clinit>(RSEInitJob.java:65)
+	at org.eclipse.rse.internal.ui.RSEUIStartup.earlyStartup(RSEUIStartup.java:20)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.runEarlyStartup(EarlyStartupRunnable.java:77)
+	at org.eclipse.ui.internal.EarlyStartupRunnable.run(EarlyStartupRunnable.java:53)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.Workbench$55.run(Workbench.java:2830)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: java.net.UnknownHostException: ubuntu-VirtualBox: unknown error
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method)
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:928)
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1323)
+	at java.net.InetAddress.getLocalHost(InetAddress.java:1500)
+	... 28 more
+
+!ENTRY org.eclipse.ui.navigator.resources 4 0 2017-07-05 23:12:38.527
+!MESSAGE Could not acquire INavigatorContentService: Project Explorer not found.
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-07-06 00:40:10.825
+!MESSAGE Invalid project description.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:169)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:53)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:263)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:247)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createExistingProject(ProjectUtils.java:179)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.access$0(ProjectUtils.java:142)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils$1.run(ProjectUtils.java:97)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createProjects(ProjectUtils.java:134)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createProjects(ProjectUtils.java:60)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard.importProjects(GitCreateProjectViaWizardWizard.java:166)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard.access$1(GitCreateProjectViaWizardWizard.java:148)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard$3.run(GitCreateProjectViaWizardWizard.java:132)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: OK
+Contains: /home/ubuntu/git/headfirstpython overlaps the workspace location: /home/ubuntu/git/headfirstpython
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2017-07-06 00:40:10.859
+!MESSAGE Invalid project description.
+!SUBENTRY 2 unknown 0 0 2017-07-06 00:40:10.859
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2017-07-06 00:40:10.859
+!MESSAGE /home/ubuntu/git/headfirstpython overlaps the workspace location: /home/ubuntu/git/headfirstpython
+
+!ENTRY org.eclipse.egit.ui 4 0 2017-07-06 00:40:19.022
+!MESSAGE Invalid project description.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Invalid project description.
+	at org.eclipse.core.internal.resources.Project.checkDescription(Project.java:169)
+	at org.eclipse.core.internal.resources.Project.assertCreateRequirements(Project.java:53)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:263)
+	at org.eclipse.core.internal.resources.Project.create(Project.java:247)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createExistingProject(ProjectUtils.java:179)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.access$0(ProjectUtils.java:142)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils$1.run(ProjectUtils.java:97)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2240)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2262)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createProjects(ProjectUtils.java:134)
+	at org.eclipse.egit.ui.internal.clone.ProjectUtils.createProjects(ProjectUtils.java:60)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard.importProjects(GitCreateProjectViaWizardWizard.java:166)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard.access$1(GitCreateProjectViaWizardWizard.java:148)
+	at org.eclipse.egit.ui.internal.clone.GitCreateProjectViaWizardWizard$3.run(GitCreateProjectViaWizardWizard.java:132)
+	at org.eclipse.jface.operation.ModalContext$ModalContextThread.run(ModalContext.java:119)
+Contains: OK
+Contains: /home/ubuntu/git/headfirstpython overlaps the workspace location: /home/ubuntu/git/headfirstpython
+!SUBENTRY 1 org.eclipse.core.resources 4 77 2017-07-06 00:40:19.030
+!MESSAGE Invalid project description.
+!SUBENTRY 2 unknown 0 0 2017-07-06 00:40:19.030
+!MESSAGE OK
+!SUBENTRY 2 org.eclipse.core.resources 4 77 2017-07-06 00:40:19.031
+!MESSAGE /home/ubuntu/git/headfirstpython overlaps the workspace location: /home/ubuntu/git/headfirstpython

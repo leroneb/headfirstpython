@@ -1,0 +1,1 @@
+Use this tool to search for letters within a phrase. 
