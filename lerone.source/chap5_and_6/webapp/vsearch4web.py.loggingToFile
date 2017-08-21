@@ -11,29 +11,13 @@ app = Flask(__name__)
 
 
 def log(req: 'flask_request', res: str) -> None:
-    import mysql.connector
-    dbconfig = { 'host': '127.0.0.1',
-                 'user': 'vsearch',
-                 'password': 'vsearchpasswd',
-                 'database': 'vsearchlogDB' }
-    conn = mysql.connector.connect(**dbconfig)
-    cursor = conn.cursor()
-    _SQL = """insert into log
-            (phrase, letters, ip, browser_info, results)
-            values
-            (%s, %s, %s, %s, %s)"""
-    # for *.browser, we're only saving the name of the browser
-    cursor.execute(_SQL, (req.form['phrase'], 
-                          req.form['letters'],
-                          req.remote_addr,
-                          req.user_agent.browser,
-                          res, ))
-    conn.commit()
-    cursor.close()
-    conn.close()
-    
+    with open('vsearch.log', 'a') as logs:
+        print(req.form, req.remote_addr,
+              req.user_agent, res, file=logs, sep='|')
 
 # Need to specify that post requests are allowed
+
+
 @app.route('/search4', methods=['GET', 'POST'])
 def do_search() -> str:
     phrase = request.form['phrase']
